@@ -1,7 +1,14 @@
 ---
 Name: goldfinch-dashpanel
+Before:
+  - '#elemental'
+  - '#elementalcache'
 ---
 
 SilverStripe\CMS\Controllers\ContentController:
   extensions:
     - Goldfinch\Dashpanel\Extensions\DashpanelExtension
+
+DNADesign\Elemental\Controllers\ElementController:
+  extensions:
+    - Goldfinch\Dashpanel\Extensions\DashpanelHolderControllerExtension
