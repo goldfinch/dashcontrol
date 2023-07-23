@@ -1,0 +1,7 @@
+---
+Name: goldfinch-dashpanel
+---
+
+SilverStripe\CMS\Controllers\ContentController:
+  extensions:
+    - Goldfinch\Dashpanel\Extensions\DashpanelExtension
