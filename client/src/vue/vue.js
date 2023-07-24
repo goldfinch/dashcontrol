@@ -8,8 +8,8 @@ const pinia = createPinia();
 
 let dashpanelRef = '[goldfinch-dashpanel]';
 
-const daspanel = document.querySelector(dashpanelRef);
-const app = createApp(AppDashpanel, { ...daspanel.dataset });
+const dashpanel = document.querySelector(dashpanelRef);
+const app = createApp(AppDashpanel, { ...dashpanel.dataset });
 app
   .use(pinia)
   .use(plugin, defaultConfig(customConfig))
