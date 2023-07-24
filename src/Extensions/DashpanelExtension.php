@@ -21,13 +21,14 @@ class DashpanelExtension extends Extension
           }
           else
           {
-              $host = 'http://[::1]:5173';
-              // $host = 'http://127.0.0.1:5173';
+              $host = 'https://silverstripe-starter.lh:5173';
+              // $host = 'https://[::1]:5173';
+              // $host = 'https://127.0.0.1:5173';
 
               Requirements::insertHeadTags('
               <script type="module" src="' . $host . '/@vite/client"></script>
               <link rel="stylesheet" href="' . $host . '/src/app.scss">
-              <script type="application/javascript" src="' . $host . '/src/app.js"></script>
+              <script type="module" src="' . $host . '/src/app.js"></script>
               ');
           }
         }
