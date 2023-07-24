@@ -29,10 +29,12 @@ function setElementPosition(el) {
 }
 
 function elementMouseover(element) {
+
   element.ref.style.filter = 'grayscale(1) blur(1px)';
   element.viewing = true;
 }
 function elementMouseout(element) {
+
   element.ref.style.filter = '';
   element.viewing = false;
 }
@@ -55,9 +57,9 @@ onMounted(() => {
       @mouseover="elementMouseover(element)"
       @mouseout="elementMouseout(element)"
     >
-      <Transition>
+      <!-- <Transition> -->
         <ElementInfo v-if="element.viewing" :element="element"></ElementInfo>
-      </Transition>
+      <!-- </Transition> -->
     </a>
   </div>
 
