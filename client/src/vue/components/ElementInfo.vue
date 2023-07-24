@@ -1,6 +1,7 @@
 <script setup>
 
-import moment from 'moment';
+import moment from 'moment-timezone';
+// moment().tz('Pacific/Auckland').format(); // TODO dynamic
 
 const props = defineProps({
   element: Object
