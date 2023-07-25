@@ -17,15 +17,21 @@ class PanelService
     /**
      * Gets the size of public/assets folder
      */
+
     public static function getAssetsSize(): string
     {
         $f = BASE_PATH . '/public/assets/';
-        $io = popen('/usr/bin/du -sh' . $f, 'r');
-        $assetsSize = fgets($io, 4096);
-        $assetsSize = substr($assetsSize, 0, strpos($assetsSize, '\t'));
-        pclose($io);
+        // $io = popen('/usr/bin/du -sh' . $f, 'r');
+        // $assetsSize = fgets($io, 4096);
+        // $assetsSize = substr($assetsSize, 0, strpos($assetsSize, '\t'));
+        // pclose($io);
 
-        return $assetsSize;
+        $assetsSize = 0;
+        foreach (new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($f)) as $file) {
+            $assetsSize += $file->getSize();
+        }
+
+        return round($assetsSize / 1000000, 2);
     }
 
     /**
@@ -53,13 +59,15 @@ class PanelService
     {
         $data = [
             'dns' => dns_get_record(Director::host()),
+
+            'disk_total' => round((disk_total_space('/') / 1000000) / 1000, 2), // gb
             'timezone' => date_default_timezone_get(),
             'server_ip' => $_SERVER['SERVER_ADDR'],
             'server_email' => $_SERVER['SERVER_ADMIN'],
             'cdn' => isset($_SERVER['HTTP_CDN_LOOP']) ? $_SERVER['HTTP_CDN_LOOP'] : null, // cloudflare
             'server_ipcountry' => isset($_SERVER['HTTP_CF_IPCOUNTRY']) ? $_SERVER['HTTP_CF_IPCOUNTRY'] : null,
             'php' => phpversion(),
-            'allocated_php_memory' => (memory_get_usage() * 1000000), // mb
+            'allocated_php_memory' => round(memory_get_usage() / 1000000, 2), // mb
             'mysql' => mysqli_get_client_info(), // if used?
         ];
 
@@ -101,7 +109,8 @@ class PanelService
                   'hash' => $commit[0],
                   'commit' => $commit[1],
                   'author' => $commit[2],
-                  'date' => $commit[3],
+                  'email' => $commit[3],
+                  'date' => $commit[4],
                 ];
             }
 
@@ -144,7 +153,7 @@ class PanelService
      */
     public static function getGitCurrentBranch(): string | null
     {
-        $branches = $this->getGitBranches();
+        $branches = self::getGitBranches();
 
         if ($branches)
         {

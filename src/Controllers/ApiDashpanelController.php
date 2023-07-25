@@ -2,6 +2,7 @@
 
 namespace Goldfinch\Dashpanel\Controllers;
 
+use SilverStripe\Security\Security;
 use SilverStripe\Control\Controller;
 use SilverStripe\Control\HTTPRequest;
 use Goldfinch\Dashpanel\Services\PanelService;
@@ -27,6 +28,9 @@ class ApiDashpanelController extends Controller
         'POST block/publish' => 'blockPublish',
         'POST block/unpublish' => 'blockUnpublish',
         'POST block/archive' => 'blockArchive',
+
+        'POST info/user' => 'infoUser',
+        'POST info/composer' => 'infoComposer',
     ];
 
     private static $allowed_actions = [
@@ -45,6 +49,9 @@ class ApiDashpanelController extends Controller
         'blockPublish',
         'blockUnpublish',
         'blockArchive',
+
+        'infoComposer',
+        'infoUser',
     ];
 
     protected function init()
@@ -54,9 +61,29 @@ class ApiDashpanelController extends Controller
         // ..
     }
 
+    public function infoUser()
+    {
+        $user = Security::getCurrentUser();
+
+        $data = [
+            'email' => $user->Email,
+            'name' => $user->getName(),
+        ];
+
+        return json_encode($data);
+    }
+
     public function devTasks()
     {
         //
+    }
+
+    public function infoComposer()
+    {
+        // 2) Composer installed packages
+        $installedPackages = PanelService::getComposerInstalledPackageList();
+
+        return json_encode($installedPackages);
     }
 
     public function infoTable()
@@ -64,34 +91,26 @@ class ApiDashpanelController extends Controller
         // 1) Assets folder size
         $assetsSize = PanelService::getAssetsSize();
 
-        // 2) Composer installed packages
-        $installedPackages = PanelService::getComposerInstalledPackageList();
-
         // 3) Server data
         $serverData = PanelService::getServerData();
 
         // 4) SilverStripe version
-        $versionProvider = PanelService::getSilverStripeVersion();
+        $ss = PanelService::getSilverStripeVersion();
 
         // 5) Mysql Size / amount of tables
         // - TODO
-
-        // 6) Github (last commit / 10 last commits)
-        PanelService::getGitCommits(10);
-        PanelService::getGitBranches();
-        PanelService::getGitCurrentBranch();
 
         // ---
 
         $data = [
           'assetsSize' => $assetsSize,
 
-          'installedPackages' => $installedPackages,
-
           'server' => $serverData,
 
           'ss' => $ss,
         ];
+
+        return json_encode($data);
     }
 
     public function searchPage()
@@ -131,6 +150,12 @@ class ApiDashpanelController extends Controller
 
         // curl -X GET -u bitbucket_username:app_password "https://api.bitbucket.org/2.0/repositories/<workspace>/<repository>/pipelines/?status=PENDING&status=BUILDING&status=IN_PROGRESS"
         // PENDING,BUILDING,IN_PROGRESS
+
+        return json_encode([
+          'commits' => PanelService::getGitCommits(10),
+          'branches' => PanelService::getGitBranches(),
+          'mainbranch' => PanelService::getGitCurrentBranch(),
+        ]);
     }
 
     public function performanceInfo()
