@@ -4,7 +4,7 @@ namespace Goldfinch\Dashpanel\Views;
 
 use SilverStripe\View\ViewableData;
 use SilverStripe\Security\Permission;
-use Goldfinch\Dashpanel\Services\PanelService;
+use Goldfinch\Dashcore\Services\DashService;
 
 class Dashpanel extends ViewableData
 {
@@ -15,7 +15,7 @@ class Dashpanel extends ViewableData
             return;
         }
 
-        $data = PanelService::getPanelInitialData();
+        $data = DashService::getPanelInitialData();
 
         return $this->customise(['jsonData' => $data ? json_encode($data) : null])->renderWith('Goldfinch/Dashpanel/Views/Dashpanel');
     }
