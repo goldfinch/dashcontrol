@@ -18,23 +18,23 @@ export default defineConfig({
       },
   },
 
-  // build: {
-  //   emptyOutDir: true,
-  //   outDir: '../dist',
-  //   rollupOptions: {
-  //     output: {
-  //       entryFileNames: `dashpanel/assets/[name].js`,
-  //       chunkFileNames: `dashpanel/assets/[name].js`,
-  //       assetFileNames: `dashpanel/assets/[name].[ext]`
-  //     }
-  //   }
-  // },
+  build: {
+    emptyOutDir: true,
+    outDir: '../dist',
+    rollupOptions: {
+      output: {
+        entryFileNames: `dashpanel/assets/[name].js`,
+        chunkFileNames: `dashpanel/assets/[name].js`,
+        assetFileNames: `dashpanel/assets/[name].[ext]`
+      }
+    }
+  },
 
   plugins: [
       laravel({
           input: [
-              'src/app.scss',
-              'src/app.js',
+              'src/dashpanel.scss',
+              'src/dashpanel.js',
           ],
           refresh: true,
       }),

@@ -1,0 +1,100 @@
+{
+  "node_modules/bootstrap-icons/icons/box-fill.svg": {
+    "file": "dashpanel/assets/box-fill.svg",
+    "src": "node_modules/bootstrap-icons/icons/box-fill.svg"
+  },
+  "node_modules/bootstrap-icons/icons/bug-fill.svg": {
+    "file": "dashpanel/assets/bug-fill.svg",
+    "src": "node_modules/bootstrap-icons/icons/bug-fill.svg"
+  },
+  "node_modules/bootstrap-icons/icons/clock-history.svg": {
+    "file": "dashpanel/assets/clock-history.svg",
+    "src": "node_modules/bootstrap-icons/icons/clock-history.svg"
+  },
+  "node_modules/bootstrap-icons/icons/clock.svg": {
+    "file": "dashpanel/assets/clock.svg",
+    "src": "node_modules/bootstrap-icons/icons/clock.svg"
+  },
+  "node_modules/bootstrap-icons/icons/cone-striped.svg": {
+    "file": "dashpanel/assets/cone-striped.svg",
+    "src": "node_modules/bootstrap-icons/icons/cone-striped.svg"
+  },
+  "node_modules/bootstrap-icons/icons/database-fill-gear.svg": {
+    "file": "dashpanel/assets/database-fill-gear.svg",
+    "src": "node_modules/bootstrap-icons/icons/database-fill-gear.svg"
+  },
+  "node_modules/bootstrap-icons/icons/diagram-3-fill.svg": {
+    "file": "dashpanel/assets/diagram-3-fill.svg",
+    "src": "node_modules/bootstrap-icons/icons/diagram-3-fill.svg"
+  },
+  "node_modules/bootstrap-icons/icons/eye-fill.svg": {
+    "file": "dashpanel/assets/eye-fill.svg",
+    "src": "node_modules/bootstrap-icons/icons/eye-fill.svg"
+  },
+  "node_modules/bootstrap-icons/icons/fire.svg": {
+    "file": "dashpanel/assets/fire.svg",
+    "src": "node_modules/bootstrap-icons/icons/fire.svg"
+  },
+  "node_modules/bootstrap-icons/icons/gear-wide-connected.svg": {
+    "file": "dashpanel/assets/gear-wide-connected.svg",
+    "src": "node_modules/bootstrap-icons/icons/gear-wide-connected.svg"
+  },
+  "node_modules/bootstrap-icons/icons/lightning-fill.svg": {
+    "file": "dashpanel/assets/lightning-fill.svg",
+    "src": "node_modules/bootstrap-icons/icons/lightning-fill.svg"
+  },
+  "node_modules/bootstrap-icons/icons/pencil-fill.svg": {
+    "file": "dashpanel/assets/pencil-fill.svg",
+    "src": "node_modules/bootstrap-icons/icons/pencil-fill.svg"
+  },
+  "node_modules/bootstrap-icons/icons/person-circle.svg": {
+    "file": "dashpanel/assets/person-circle.svg",
+    "src": "node_modules/bootstrap-icons/icons/person-circle.svg"
+  },
+  "node_modules/bootstrap-icons/icons/robot.svg": {
+    "file": "dashpanel/assets/robot.svg",
+    "src": "node_modules/bootstrap-icons/icons/robot.svg"
+  },
+  "node_modules/bootstrap-icons/icons/rocket-takeoff.svg": {
+    "file": "dashpanel/assets/rocket-takeoff.svg",
+    "src": "node_modules/bootstrap-icons/icons/rocket-takeoff.svg"
+  },
+  "node_modules/bootstrap-icons/icons/search.svg": {
+    "file": "dashpanel/assets/search.svg",
+    "src": "node_modules/bootstrap-icons/icons/search.svg"
+  },
+  "node_modules/bootstrap-icons/icons/shield-lock-fill.svg": {
+    "file": "dashpanel/assets/shield-lock-fill.svg",
+    "src": "node_modules/bootstrap-icons/icons/shield-lock-fill.svg"
+  },
+  "node_modules/bootstrap-icons/icons/sign-turn-right-fill.svg": {
+    "file": "dashpanel/assets/sign-turn-right-fill.svg",
+    "src": "node_modules/bootstrap-icons/icons/sign-turn-right-fill.svg"
+  },
+  "node_modules/bootstrap-icons/icons/speedometer.svg": {
+    "file": "dashpanel/assets/speedometer.svg",
+    "src": "node_modules/bootstrap-icons/icons/speedometer.svg"
+  },
+  "node_modules/bootstrap-icons/icons/wrench-adjustable-circle.svg": {
+    "file": "dashpanel/assets/wrench-adjustable-circle.svg",
+    "src": "node_modules/bootstrap-icons/icons/wrench-adjustable-circle.svg"
+  },
+  "src/dashpanel.js": {
+    "dynamicImports": [
+      "src/vue/vue.js"
+    ],
+    "file": "dashpanel/assets/dashpanel2.js",
+    "isEntry": true,
+    "src": "src/dashpanel.js"
+  },
+  "src/dashpanel.scss": {
+    "file": "dashpanel/assets/dashpanel.css",
+    "isEntry": true,
+    "src": "src/dashpanel.scss"
+  },
+  "src/vue/vue.js": {
+    "file": "dashpanel/assets/vue.js",
+    "isDynamicEntry": true,
+    "src": "src/vue/vue.js"
+  }
+}
