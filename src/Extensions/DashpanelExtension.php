@@ -17,9 +17,10 @@ class DashpanelExtension extends Extension
             {
                 Requirements::css('goldfinch/dashpanel:client/dist/dashpanel-style.css');
                 Requirements::javascript('goldfinch/dashpanel:client/dist/dashpanel.js');
-                // extra assets
-                Requirements::css('goldfinch/extra-assets:client/dist/font-opensans.css');
             }
+
+            // extra assets
+            Requirements::css('goldfinch/extra-assets:client/dist/font-opensans.css');
         }
     }
 }
