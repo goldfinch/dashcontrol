@@ -29,7 +29,6 @@ export default defineConfig({
   // base: '',
   build: {
     emptyOutDir: true,
-    // outDir: path.join(__dirname, 'dist'),
     outDir: '../dist',
     rollupOptions: {
       output: {
