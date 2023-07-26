@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import autoprefixer from "autoprefixer";
+import * as path from 'path'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 import vue from '@vitejs/plugin-vue';
 import fs from 'fs';
@@ -8,6 +9,12 @@ import fs from 'fs';
 const host = 'silverstripe-starter.lh';
 
 export default defineConfig({
+
+  resolve: {
+      alias: {
+          '~bootstrap-icons': path.resolve(__dirname, 'node_modules/bootstrap-icons/icons'),
+      }
+  },
 
   server: {
       host,
@@ -17,26 +24,42 @@ export default defineConfig({
           cert: fs.readFileSync(`/Applications/MAMP/Library/OpenSSL/certs/${host}.crt`),
       },
   },
-
+  // root: path.join(__dirname, 'src'),
+  // base: '',
   build: {
     emptyOutDir: true,
+    // outDir: path.join(__dirname, 'dist'),
     outDir: '../dist',
     rollupOptions: {
       output: {
-        entryFileNames: `dashpanel/assets/[name].js`,
-        chunkFileNames: `dashpanel/assets/[name].js`,
-        assetFileNames: `dashpanel/assets/[name].[ext]`
+        entryFileNames: `[name].js`,
+        chunkFileNames: `js/[name].js`,
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name.endsWith('.css')) {
+            return '[name][extname]'
+          } else if (
+            assetInfo.name.match(/(\.(woff2?|eot|ttf|otf)|font\.svg)(\?.*)?$/)
+          ) {
+            return 'fonts/[name][extname]'
+          } else if (assetInfo.name.match(/\.(jpg|png|svg)$/)) {
+            return 'images/[name][extname]'
+          }
+
+          return 'js/[name][extname]'
+        }
       }
     }
   },
 
   plugins: [
+
       laravel({
           input: [
-              'src/dashpanel.scss',
+              'src/dashpanel-style.scss',
               'src/dashpanel.js',
           ],
           refresh: true,
+          // buildDirectory: '',
       }),
 
       vue({
@@ -50,10 +73,10 @@ export default defineConfig({
 
       viteStaticCopy({
         targets: [
-          // {
-          //   src: './extra/images/*',
-          //   dest: '../dist/dashpanel/assets/extra/images',
-          // },
+          {
+            src: './node_modules/bootstrap-icons/icons/*',
+            dest: '../dist/images/bootstrap-icons',
+          },
         ],
       })
   ],

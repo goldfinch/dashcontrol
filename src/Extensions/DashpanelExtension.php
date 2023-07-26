@@ -15,8 +15,8 @@ class DashpanelExtension extends Extension
         {
             if (BuildHelper::isProduction())
             {
-                Requirements::css('goldfinch/dashpanel:client/dist/dashpanel/assets/dashpanel.css');
-                Requirements::javascript('goldfinch/dashpanel:client/dist/dashpanel/assets/dashpanel2.js');
+                Requirements::css('goldfinch/dashpanel:client/dist/dashpanel-style.css');
+                Requirements::javascript('goldfinch/dashpanel:client/dist/dashpanel.js');
             }
         }
     }
