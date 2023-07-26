@@ -34,9 +34,9 @@ $bootstrap-icon-path: '/_resources/vendor/goldfinch/extra-assets/client/dist/boo
   opacity: 0;
 }
 
-
-
-[goldfinch-dashpanel] {}
+[goldfinch-dashpanel] {
+  font-family: 'Open Sans';
+}
 
 .gfdashpanel {
   position: fixed;
