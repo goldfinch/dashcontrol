@@ -12,7 +12,7 @@ const props = defineProps({
   <div class="controleelementinfo">
     <div>
       <div class="controleelementinfo__body">
-        <div class="controleelementinfo__icon"><img :src="`/build-cms/enchantment/assets/extra/bootstrap-icons/${element.icon.substr(3)}.svg`"></div>
+        <div class="controleelementinfo__icon"><img :src="`/_resources/vendor/goldfinch/dashpanel/client/dist/images/bootstrap-icons/${element.icon.substr(3)}.svg`"></div>
         <div class="controleelementinfo__title" v-text="element.type"></div>
         <div class="controleelementinfo__description" v-text="element.summary"></div>
       </div>
