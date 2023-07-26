@@ -1,8 +1,8 @@
 {
-  "src/app.scss": {
-    "file": "css/app.css",
+  "src/dashpanel-style.scss": {
+    "file": "dashpanel-style.css",
     "isEntry": true,
-    "src": "src/app.scss"
+    "src": "src/dashpanel-style.scss"
   },
   "src/dashpanel.js": {
     "dynamicImports": [
