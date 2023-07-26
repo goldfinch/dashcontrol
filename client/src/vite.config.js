@@ -11,9 +11,7 @@ const host = 'silverstripe-starter.lh';
 export default defineConfig({
 
   resolve: {
-      alias: {
-          '~bootstrap-icons': path.resolve(__dirname, 'node_modules/bootstrap-icons/icons'),
-      }
+      alias: {}
   },
 
   server: {
@@ -81,12 +79,12 @@ export default defineConfig({
       // })
   ],
 
-    css: {
-        postcss: {
-            plugins: [
-                autoprefixer,
-            ],
-        }
-    },
+  css: {
+      postcss: {
+          plugins: [
+              autoprefixer,
+          ],
+      }
+  },
 
 });
