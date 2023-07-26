@@ -71,14 +71,14 @@ export default defineConfig({
           },
       }),
 
-      viteStaticCopy({
-        targets: [
-          {
-            src: './node_modules/bootstrap-icons/icons/*',
-            dest: '../dist/images/bootstrap-icons',
-          },
-        ],
-      })
+      // viteStaticCopy({
+      //   targets: [
+      //     {
+      //       src: './node_modules/bootstrap-icons/icons/*',
+      //       dest: '../dist/images/bootstrap-icons',
+      //     },
+      //   ],
+      // })
   ],
 
     css: {
