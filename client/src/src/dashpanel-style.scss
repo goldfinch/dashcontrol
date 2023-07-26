@@ -19,10 +19,6 @@
 // Utilities
 @import 'bootstrap/scss/utilities/api';
 
-// $bootstrap-icon-path: '../node_modules/bootstrap-icons/icons/'; // only for dev
-$bootstrap-icon-path: '/_resources/vendor/goldfinch/extra-assets/client/dist/bootstrap-icons/icons/';
-
-
 /* we will explain what these classes do next! */
 .v-enter-active,
 .v-leave-active {
@@ -32,6 +28,11 @@ $bootstrap-icon-path: '/_resources/vendor/goldfinch/extra-assets/client/dist/boo
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
 
 [goldfinch-dashpanel] {

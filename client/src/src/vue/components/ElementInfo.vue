@@ -1,7 +1,10 @@
 <script setup>
 
+import { inject } from 'vue'
 import moment from 'moment-timezone';
 // moment().tz('Pacific/Auckland').format(); // TODO dynamic
+
+const cfg = inject('cfg')
 
 const props = defineProps({
   element: Object
@@ -12,7 +15,7 @@ const props = defineProps({
   <div class="controleelementinfo">
     <div>
       <div class="controleelementinfo__body">
-        <div class="controleelementinfo__icon"><img :src="`/_resources/vendor/goldfinch/dashpanel/client/dist/images/bootstrap-icons/${element.icon.substr(3)}.svg`"></div>
+        <div class="controleelementinfo__icon"><img :src="`${cfg.bootstrap_icon_path}${element.icon.substr(3)}.svg`"></div>
         <div class="controleelementinfo__title" v-text="element.type"></div>
         <div class="controleelementinfo__description" v-text="element.summary"></div>
       </div>

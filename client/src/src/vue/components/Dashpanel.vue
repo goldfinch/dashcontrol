@@ -1,9 +1,11 @@
 <script setup>
 
-import { h, ref } from 'vue'
+import { ref, inject } from 'vue'
 import { useAppStore } from '../stores/AppStore';
 // import { useDashpanelStore } from '../stores/DashpanelStore';
 import moment from 'moment-timezone';
+
+const cfg = inject('cfg')
 
 // const dashpanelStore = useDashpanelStore();
 const store = useAppStore();
@@ -47,7 +49,7 @@ function updatedBy() {
       <span v-if="data.page.stagesDiffer" class="pagestate" data-type="draft">Draft</span>
       <span v-else-if="!data.page.isPublished" class="pagestate" data-type="modified">Modified</span>
       <span v-else class="pagestate" data-type="published">Published</span>
-      <span class="pagetype" :title="data.page.classNamespace"><span><i data-type="page" :style="`opacity: .5`"><img :src="`/_resources/vendor/goldfinch/dashpanel/client/dist/images/bootstrap-icons/${data.page.icon}.svg`"/></i></span> {{ data.page.className }}</span>
+      <span class="pagetype" :title="data.page.classNamespace"><span><i data-type="page" :style="`opacity: .5`"><img :src="`${cfg.bootstrap_icon_path}${data.page.icon}.svg`"/></i></span> {{ data.page.className }}</span>
       <span class="pagecreated" :title="moment(data.page.createdAt).format('MMMM Do YYYY, HH:mm:ss')"><span><i data-type="clock"></i>created</span>{{ moment(data.page.createdAt).fromNow() }}<i v-html="createdBy()" /></span>
       <span class="pageupdated" :title="moment(data.page.updatedAt).format('MMMM Do YYYY, HH:mm:ss')"><span><i data-type="clock-history"></i>updated</span>{{ moment(data.page.updatedAt).fromNow() }}<i v-html="updatedBy()" /></span>
     </div>

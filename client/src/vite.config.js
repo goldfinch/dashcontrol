@@ -5,21 +5,24 @@ import * as path from 'path'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 import vue from '@vitejs/plugin-vue';
 import fs from 'fs';
+import cfg from './app.config.js'
 
-const host = 'silverstripe-starter.lh';
+const host = cfg.host;
 
 export default defineConfig({
 
   resolve: {
-      alias: {}
+      alias: {
+          '@': path.resolve(__dirname),
+      }
   },
 
   server: {
       host,
       hmr: { host },
       https: {
-          key: fs.readFileSync(`/Applications/MAMP/Library/OpenSSL/certs/${host}.key`),
-          cert: fs.readFileSync(`/Applications/MAMP/Library/OpenSSL/certs/${host}.crt`),
+          key: fs.readFileSync(`${cfg.certs}.key`),
+          cert: fs.readFileSync(`${cfg.certs}.crt`),
       },
   },
   // root: path.join(__dirname, 'src'),
@@ -80,11 +83,16 @@ export default defineConfig({
   ],
 
   css: {
-      postcss: {
-          plugins: [
-              autoprefixer,
-          ],
-      }
+    preprocessorOptions: {
+      scss: {
+        additionalData: cfg.sassAdditionalData,
+      },
+    },
+    postcss: {
+      plugins: [
+        autoprefixer,
+      ],
+    }
   },
 
 });
