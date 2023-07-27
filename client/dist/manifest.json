@@ -13,7 +13,7 @@
     "src": "src/dashpanel.js"
   },
   "src/vue/vue.js": {
-    "file": "js/vue.js",
+    "file": "js/vue-63763b86.js",
     "isDynamicEntry": true,
     "src": "src/vue/vue.js"
   }

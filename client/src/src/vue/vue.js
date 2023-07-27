@@ -1,4 +1,4 @@
-import cfg from '@/app.config.js'
+import cfg from '@/app.config.json'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia';
@@ -16,7 +16,7 @@ if (dashpanel) {
 
   const app = createApp(AppDashpanel, { ...dashpanel.dataset });
 
-  app.provide('cfg', cfg.public)
+  app.provide('cfg', cfg)
 
   app
     .use(pinia)
