@@ -21,6 +21,12 @@ class DashpanelExtension extends Extension
 
             // extra assets
             Requirements::css('goldfinch/extra-assets:client/dist/font-opensans.css');
+
+            // ? could be uneccessary here if using .svg instead of .svg within this package
+            if (!InstalledVersions::isInstalled('goldfinch/enchantment'))
+            {
+                Requirements::css('goldfinch/extra-assets:client/dist/bootstrap-icons.css');
+            }
         }
     }
 }
