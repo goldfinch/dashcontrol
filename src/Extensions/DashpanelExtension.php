@@ -2,6 +2,7 @@
 
 namespace Goldfinch\Dashpanel\Extensions;
 
+use Composer\InstalledVersions;
 use SilverStripe\Core\Extension;
 use SilverStripe\View\Requirements;
 use SilverStripe\Security\Permission;
