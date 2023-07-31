@@ -19,6 +19,8 @@
 // Utilities
 @import 'bootstrap/scss/utilities/api';
 
+$box-shadow-elements: 0px 0px 4px 0px rgb(223 223 223 / 72%);
+
 /* we will explain what these classes do next! */
 .v-enter-active,
 .v-leave-active {
@@ -52,7 +54,8 @@ body {
 
 .gfdashpanel .gfdashpanel__switch {
   background-color: #fefefe;
-  border: 1px solid #ddd;
+  box-shadow: $box-shadow-elements;
+  border: none;
   border-radius: 5px;
   width: 30px;
   height: 30px;
@@ -96,8 +99,9 @@ body {
   height: 26px;
   background-color: #fff;
   border-radius: 50%;
-  border: 1px solid #ddd;
+  box-shadow: $box-shadow-elements;
   opacity: .25;
+  border: none;
   transition: opacity .3s ease-in-out;
 
   &:hover {
@@ -128,13 +132,13 @@ body {
 
 .gfdashpanel .gfdashpanel__wrapper {
   background-color: #fefefe;
-  border: 1px solid #ddd;
   border-radius: 5px;
   width: calc(100% - 40px);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   overflow: hidden;
+  box-shadow: $box-shadow-elements;
 
   @include media-breakpoint-down(md) {
     align-items: flex-start;
@@ -144,7 +148,7 @@ body {
 .gfdashpanel .gfdashpanel__primary {
   display: flex;
   align-items: center;
-  background-color: #efefef;
+  background-color: #fcfcfc;
 
   @include media-breakpoint-down(md) {
     border-bottom: 1px solid #ddd;
@@ -156,7 +160,7 @@ body {
   font-weight: 600;
   color: #fff;
   display: inline-block;
-  border-right: 1px solid #ddd;
+  border-right: 1px solid #efefef;
   position: relative;
   width: 35px;
   height: 36px;
@@ -244,7 +248,7 @@ body {
   align-items: center;
   // border: 1px solid #ddd;
   border-radius: 5px;
-  padding: 2.5px 7px 4.5px;
+  padding: 3.5px 7px;
 
   span {
     font-weight: 600;
@@ -262,6 +266,8 @@ body {
       transition: background-color .3s ease-in-out;
       background-color: #808080;
       margin-right: 5px;
+      position: relative;
+      top: 1px;
     }
 
     i[data-type="page"] {
@@ -569,7 +575,7 @@ body {
     width: 30px;
     height: 30px;
     display: block;
-    border: 1px solid #ddd;
+    box-shadow: $box-shadow-elements;
     background-color: #fff;
     border-radius: 50%;
   }

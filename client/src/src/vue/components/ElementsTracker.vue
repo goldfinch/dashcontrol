@@ -58,7 +58,7 @@ onMounted(() => {
       @mouseout="elementMouseout(element)"
     >
       <!-- <Transition> -->
-        <ElementInfo v-if="element.viewing" :element="element"></ElementInfo>
+        <!-- <ElementInfo v-if="element.viewing" :element="element"></ElementInfo> -->
       <!-- </Transition> -->
     </a>
   </div>
