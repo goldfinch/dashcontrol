@@ -72,7 +72,7 @@ function updatedBy() {
     </ul>
   </div>
 
-  <div class="controlwindow">
+  <!-- <div class="controlwindow">
     <div class="controlwindow__inner">
       <div class="controlwindow__head">
         <ul class="controlwindow__tabs">
@@ -87,6 +87,6 @@ function updatedBy() {
       </div>
       <div class="controlwindow__body"></div>
     </div>
-  </div>
+  </div> -->
 
 </template>
