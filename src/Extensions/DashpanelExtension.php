@@ -14,19 +14,26 @@ class DashpanelExtension extends Extension
     {
         if (Permission::check('CMS_ACCESS_CMSMain'))
         {
-            if (BuildHelper::isProduction())
+            if (isset($_GET['CMSPreview']))
             {
-                Requirements::css('goldfinch/dashpanel:client/dist/dashpanel-style.css');
-                Requirements::javascript('goldfinch/dashpanel:client/dist/dashpanel.js');
+                // do not load dashpanel in CMSPreview (Split/Preview mode)
             }
-
-            // extra assets
-            Requirements::css('goldfinch/extra-assets:client/dist/font-opensans.css');
-
-            // ? could be uneccessary here if using .svg instead of .svg within this package
-            if (!InstalledVersions::isInstalled('goldfinch/enchantment'))
+            else
             {
-                Requirements::css('goldfinch/extra-assets:client/dist/bootstrap-icons.css');
+                if (BuildHelper::isProduction())
+                {
+                    Requirements::css('goldfinch/dashpanel:client/dist/dashpanel-style.css');
+                    Requirements::javascript('goldfinch/dashpanel:client/dist/dashpanel.js');
+                }
+
+                // extra assets
+                Requirements::css('goldfinch/extra-assets:client/dist/font-opensans.css');
+
+                // ? could be uneccessary here if using .svg instead of .svg within this package
+                if (!InstalledVersions::isInstalled('goldfinch/enchantment'))
+                {
+                    Requirements::css('goldfinch/extra-assets:client/dist/bootstrap-icons.css');
+                }
             }
         }
     }

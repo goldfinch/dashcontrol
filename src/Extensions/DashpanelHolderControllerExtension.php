@@ -8,9 +8,16 @@ class DashpanelHolderControllerExtension extends Extension
 {
     public function updateForTemplateTemplate(&$template)
     {
-        if ($template == 'DNADesign\Elemental\ElementHolder')
+        if (isset($_GET['CMSPreview']))
         {
-            $template = 'Goldfinch\Dashpanel\Elemental\ElementHolder';
+            // don't do anything in CMSPreview (Split/Preview mode)
+        }
+        else
+        {
+            if ($template == 'DNADesign\Elemental\ElementHolder')
+            {
+                $template = 'Goldfinch\Dashpanel\Elemental\ElementHolder';
+            }
         }
 
         return $template;
