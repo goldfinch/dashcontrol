@@ -87,6 +87,7 @@ body {
 
 .gfdashpanel .gfdashpanel__switch.gfdashpanel__switch--active {
   opacity: 1;
+  cursor: pointer;
   // background-color: #ffd23f;
   // border: 1px solid rgb(#5c5c5c, 17%);
 }
@@ -124,7 +125,7 @@ body {
 
 .gfdashpanel__elementswitch.gfdashpanel__elementswitch--hide {
   opacity: 1;
-
+  cursor: pointer;
   // &:before {
   //   mask-image: url('#{$bootstrap-icon-path}eye-slash-fill.svg');
   // }
