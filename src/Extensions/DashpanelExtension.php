@@ -4,6 +4,7 @@ namespace Goldfinch\Dashpanel\Extensions;
 
 use Composer\InstalledVersions;
 use SilverStripe\Core\Extension;
+use SilverStripe\Core\Environment;
 use SilverStripe\View\Requirements;
 use SilverStripe\Security\Permission;
 use Goldfinch\Dashpanel\Helpers\BuildHelper;
