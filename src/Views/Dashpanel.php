@@ -2,6 +2,7 @@
 
 namespace Goldfinch\Dashpanel\Views;
 
+use SilverStripe\Core\Environment;
 use SilverStripe\View\ViewableData;
 use SilverStripe\Security\Permission;
 use Goldfinch\Dashcore\Services\DashService;
