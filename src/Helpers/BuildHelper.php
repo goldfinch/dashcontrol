@@ -11,6 +11,7 @@ class BuildHelper
     public static function isProduction()
     {
         if (
+          Environment::getEnv('SS_DASHPANEL') &&
           Director::isDev() &&
           Environment::getEnv('GOLDFINCH_DASHPANEL_DEV')
         )

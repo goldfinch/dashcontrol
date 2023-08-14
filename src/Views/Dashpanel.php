@@ -17,7 +17,10 @@ class Dashpanel extends ViewableData
 
         $data = DashService::getPanelInitialData();
 
-        return $this->customise(['jsonData' => $data ? json_encode($data) : null])->renderWith('Goldfinch/Dashpanel/Views/Dashpanel');
+        return $this->customise([
+          'jsonData' => $data ? json_encode($data) : null,
+          'dashpanelState' => Environment::getEnv('SS_DASHPANEL'),
+        ])->renderWith('Goldfinch/Dashpanel/Views/Dashpanel');
     }
 
     private function authorized()

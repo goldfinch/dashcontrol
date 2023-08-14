@@ -20,19 +20,22 @@ class DashpanelExtension extends Extension
             }
             else
             {
-                if (BuildHelper::isProduction())
+                if (Environment::getEnv('SS_DASHPANEL'))
                 {
-                    Requirements::css('goldfinch/dashpanel:client/dist/dashpanel-style.css');
-                    Requirements::javascript('goldfinch/dashpanel:client/dist/dashpanel.js');
-                }
+                    if (BuildHelper::isProduction())
+                    {
+                        Requirements::css('goldfinch/dashpanel:client/dist/dashpanel-style.css');
+                        Requirements::javascript('goldfinch/dashpanel:client/dist/dashpanel.js');
+                    }
 
-                // extra assets
-                Requirements::css('goldfinch/extra-assets:client/dist/font-opensans.css');
+                    // extra assets
+                    Requirements::css('goldfinch/extra-assets:client/dist/font-opensans.css');
 
-                // ? could be uneccessary here if using .svg instead of .svg within this package
-                if (!InstalledVersions::isInstalled('goldfinch/enchantment'))
-                {
-                    Requirements::css('goldfinch/extra-assets:client/dist/bootstrap-icons.css');
+                    // ? could be uneccessary here if using .svg instead of .svg within this package
+                    if (!InstalledVersions::isInstalled('goldfinch/enchantment'))
+                    {
+                        Requirements::css('goldfinch/extra-assets:client/dist/bootstrap-icons.css');
+                    }
                 }
             }
         }
