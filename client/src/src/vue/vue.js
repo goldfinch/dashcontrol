@@ -16,8 +16,5 @@ if (dashpanel) {
 
   app.provide('cfg', cfg);
 
-  app
-    .use(pinia)
-    .use(plugin, defaultConfig(customConfig))
-    .mount(dashpanelRef);
+  app.use(pinia).use(plugin, defaultConfig(customConfig)).mount(dashpanelRef);
 }

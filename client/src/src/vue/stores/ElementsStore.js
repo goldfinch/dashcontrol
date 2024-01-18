@@ -1,13 +1,11 @@
 import { defineStore } from 'pinia';
 
 export const useElementsStore = defineStore('ElementsStore', {
-
   state: () => ({
     elements: [],
   }),
 
   actions: {
-
     addElement(element) {
       this.elements.push({
         ref: element,
@@ -28,7 +26,5 @@ export const useElementsStore = defineStore('ElementsStore', {
         viewing: false,
       });
     },
-
   },
-
 });

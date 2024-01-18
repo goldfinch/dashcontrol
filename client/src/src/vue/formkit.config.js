@@ -33,7 +33,8 @@ const config = {
   // },
   config: {
     classes: generateClasses({
-      global: { // classes
+      global: {
+        // classes
         outer: 'mb-3',
         input: '$reset form-control',
         label: 'form-label',

@@ -12,9 +12,7 @@ class DashpanelTemplateProvider implements TemplateGlobalProvider
      */
     public static function get_template_global_variables(): array
     {
-        return [
-            'Dashpanel',
-        ];
+        return ['Dashpanel'];
     }
 
     /**

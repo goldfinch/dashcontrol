@@ -1,25 +1,19 @@
 <script setup>
-
-import { ref, onMounted } from 'vue'
-import ElementInfo from "./ElementInfo.vue";
+import { ref, onMounted } from 'vue';
+import ElementInfo from './ElementInfo.vue';
 import { useElementsStore } from '../stores/ElementsStore';
 const elementsStore = useElementsStore();
 
 function initElements() {
-
   let controlelements = document.getElementsByClassName('controlelements')[0];
 
   if (controlelements) {
-
     let elements = document.querySelectorAll('[data-ss-element]');
 
     if (elements.length) {
-
       elements.forEach((el, key) => {
-
-        elementsStore.addElement(el)
-
-      })
+        elementsStore.addElement(el);
+      });
     }
   }
 }
@@ -29,25 +23,19 @@ function setElementPosition(el) {
 }
 
 function elementMouseover(element) {
-
   element.ref.style.filter = 'grayscale(1) blur(1px)';
   element.viewing = true;
 }
 function elementMouseout(element) {
-
   element.ref.style.filter = '';
   element.viewing = false;
 }
 
 onMounted(() => {
-
-  initElements()
-
+  initElements();
 });
-
 </script>
 <template>
-
   <div class="controlelements">
     <a
       v-for="element in elementsStore.elements"
@@ -58,9 +46,8 @@ onMounted(() => {
       @mouseout="elementMouseout(element)"
     >
       <!-- <Transition> -->
-        <ElementInfo v-if="element.viewing" :element="element"></ElementInfo>
+      <ElementInfo v-if="element.viewing" :element="element"></ElementInfo>
       <!-- </Transition> -->
     </a>
   </div>
-
 </template>

@@ -11,16 +11,15 @@ class Dashpanel extends ViewableData
 {
     public function forTemplate()
     {
-        if (!$this->authorized())
-        {
+        if (!$this->authorized()) {
             return;
         }
 
         $data = DashService::getPanelInitialData();
 
         return $this->customise([
-          'jsonData' => $data ? json_encode($data) : null,
-          'dashpanelState' => Environment::getEnv('SS_DASHPANEL'),
+            'jsonData' => $data ? json_encode($data) : null,
+            'dashpanelState' => Environment::getEnv('SS_DASHPANEL'),
         ])->renderWith('Goldfinch/Dashpanel/Views/Dashpanel');
     }
 

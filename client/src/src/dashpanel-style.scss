@@ -64,8 +64,8 @@ body {
   border: none;
   border-radius: 5px;
   box-shadow: $box-shadow-elements;
-  opacity: .25;
-  transition: opacity .3s ease-in-out;
+  opacity: 0.25;
+  transition: opacity 0.3s ease-in-out;
 
   &:hover {
     opacity: 1;
@@ -81,7 +81,7 @@ body {
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: contain;
-    transition: background-color .3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
   }
 }
 
@@ -103,8 +103,8 @@ body {
   border: none;
   border-radius: 50%;
   box-shadow: $box-shadow-elements;
-  opacity: .25;
-  transition: opacity .3s ease-in-out;
+  opacity: 0.25;
+  transition: opacity 0.3s ease-in-out;
 
   &:hover {
     opacity: 1;
@@ -120,7 +120,7 @@ body {
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: 90%;
-    transition: background-color .3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
   }
 }
 
@@ -134,7 +134,6 @@ body {
 }
 
 .gfdashpanel .gfdashpanel__wrapper {
-
   @include media-breakpoint-down(md) {
     align-items: flex-start;
   }
@@ -150,7 +149,6 @@ body {
 }
 
 .gfdashpanel .gfdashpanel__primary {
-
   @include media-breakpoint-down(md) {
     border-bottom: 1px solid #ddd;
   }
@@ -183,7 +181,7 @@ body {
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: 48%;
-    transition: background-color .3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
   }
 }
 
@@ -211,12 +209,11 @@ body {
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: 48%;
-    transition: background-color .3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
   }
 }
 
 .gfdashpanel .gfdashpanel__inner {
-
   @include media-breakpoint-down(lg) {
     flex-wrap: wrap;
   }
@@ -236,15 +233,15 @@ body {
   border-radius: 4px;
 }
 
-.gfdashpanel .gfdashpanel__inner .pagestate[data-type="modified"] {
+.gfdashpanel .gfdashpanel__inner .pagestate[data-type='modified'] {
   background-color: #e95b1c;
 }
 
-.gfdashpanel .gfdashpanel__inner .pagestate[data-type="draft"] {
+.gfdashpanel .gfdashpanel__inner .pagestate[data-type='draft'] {
   background-color: #e95b1c;
 }
 
-.gfdashpanel .gfdashpanel__inner .pagestate[data-type="published"] {
+.gfdashpanel .gfdashpanel__inner .pagestate[data-type='published'] {
   background-color: #55bb82;
 }
 
@@ -278,10 +275,10 @@ body {
       mask-repeat: no-repeat;
       mask-position: center;
       mask-size: contain;
-      transition: background-color .3s ease-in-out;
+      transition: background-color 0.3s ease-in-out;
     }
 
-    i[data-type="page"] {
+    i[data-type='page'] {
       background-color: transparent;
 
       img {
@@ -292,17 +289,17 @@ body {
       // mask-image: url('#{$bootstrap-icon-path}file-earmark-medical-fill.svg');
     }
 
-    i[data-type="clock"] {
+    i[data-type='clock'] {
       width: 14px;
       height: 14px;
-      opacity: .8;
+      opacity: 0.8;
       mask-image: url('#{$bootstrap-icon-path}clock.svg');
     }
 
-    i[data-type="clock-history"] {
+    i[data-type='clock-history'] {
       width: 14px;
       height: 14px;
-      opacity: .8;
+      opacity: 0.8;
       mask-image: url('#{$bootstrap-icon-path}clock-history.svg');
     }
   }
@@ -327,14 +324,14 @@ body {
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: 48%;
-    transition: background-color .3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
   }
 }
-.gfdashpanel .gfdashpanel__inner .pagetype {}
+.gfdashpanel .gfdashpanel__inner .pagetype {
+}
 
 .gfdashpanel .gfdashpanel__inner .pagecreated,
 .gfdashpanel .gfdashpanel__inner .pageupdated {
-
   @include media-breakpoint-down(md) {
     width: 100%;
   }
@@ -365,7 +362,6 @@ body {
 }
 
 .gfdashpanel .gfdashpanel__sidelinks {
-
   @include media-breakpoint-down(xxl) {
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -403,10 +399,11 @@ body {
     width: 1px;
     height: 100%;
     content: '';
-    background-color: rgba(#ddd, .5);
+    background-color: rgba(#ddd, 0.5);
   }
 }
-.gfdashpanel .gfdashpanel__sidelinks li[data-i] {}
+.gfdashpanel .gfdashpanel__sidelinks li[data-i] {
+}
 
 .gfdashpanel .gfdashpanel__sidelinks li[data-i] a {
   display: inline-block;
@@ -425,7 +422,7 @@ body {
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: 80%;
-    transition: background-color .3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
   }
 
   &:hover {
@@ -435,79 +432,79 @@ body {
   }
 }
 
-.gfdashpanel .gfdashpanel__sidelinks li[data-i="logout"] a {
+.gfdashpanel .gfdashpanel__sidelinks li[data-i='logout'] a {
   &::before {
     mask-image: url('#{$bootstrap-icon-path}sign-turn-right-fill.svg');
   }
 }
 
-.gfdashpanel .gfdashpanel__sidelinks li[data-i="pages"] a {
+.gfdashpanel .gfdashpanel__sidelinks li[data-i='pages'] a {
   &::before {
     mask-image: url('#{$bootstrap-icon-path}box-fill.svg');
   }
 }
 
-.gfdashpanel .gfdashpanel__sidelinks li[data-i="dashboard"] a {
+.gfdashpanel .gfdashpanel__sidelinks li[data-i='dashboard'] a {
   &::before {
     mask-image: url('#{$bootstrap-icon-path}rocket-takeoff.svg');
   }
 }
 
-.gfdashpanel .gfdashpanel__sidelinks li[data-i="settings"] a {
+.gfdashpanel .gfdashpanel__sidelinks li[data-i='settings'] a {
   &::before {
     mask-image: url('#{$bootstrap-icon-path}gear-wide-connected.svg');
   }
 }
 
-.gfdashpanel .gfdashpanel__sidelinks li[data-i="person"] a {
+.gfdashpanel .gfdashpanel__sidelinks li[data-i='person'] a {
   &::before {
     mask-image: url('#{$bootstrap-icon-path}person-circle.svg');
   }
 }
 
-.gfdashpanel .gfdashpanel__sidelinks li[data-i="edit"] a {
+.gfdashpanel .gfdashpanel__sidelinks li[data-i='edit'] a {
   &::before {
     mask-image: url('#{$bootstrap-icon-path}pencil-fill.svg');
   }
 }
 
-.gfdashpanel .gfdashpanel__sidelinks li[data-i="dev"] a {
+.gfdashpanel .gfdashpanel__sidelinks li[data-i='dev'] a {
   &::before {
     mask-image: url('#{$bootstrap-icon-path}fire.svg');
   }
 }
 
-.gfdashpanel .gfdashpanel__sidelinks li[data-i="bug"] a {
+.gfdashpanel .gfdashpanel__sidelinks li[data-i='bug'] a {
   &::before {
     mask-image: url('#{$bootstrap-icon-path}bug-fill.svg');
   }
 }
 
-.gfdashpanel .gfdashpanel__sidelinks li[data-i="performance"] a {
+.gfdashpanel .gfdashpanel__sidelinks li[data-i='performance'] a {
   &::before {
     mask-image: url('#{$bootstrap-icon-path}speedometer.svg');
   }
 }
 
-.gfdashpanel .gfdashpanel__sidelinks li[data-i="sitemap"] a {
+.gfdashpanel .gfdashpanel__sidelinks li[data-i='sitemap'] a {
   &::before {
     mask-image: url('#{$bootstrap-icon-path}diagram-3-fill.svg');
   }
 }
 
-.gfdashpanel .gfdashpanel__sidelinks li[data-i="robots"] a {
+.gfdashpanel .gfdashpanel__sidelinks li[data-i='robots'] a {
   &::before {
     mask-image: url('#{$bootstrap-icon-path}robot.svg');
   }
 }
 
-.gfdashpanel .gfdashpanel__sidelinks li[data-i="search"] a {
+.gfdashpanel .gfdashpanel__sidelinks li[data-i='search'] a {
   &::before {
     mask-image: url('#{$bootstrap-icon-path}search.svg');
   }
 }
 
-.gfdashpanel .gfdashpanel__sidelinks li[data-i="info"] a {
+.gfdashpanel .gfdashpanel__sidelinks li[data-i='info'] a {
   &::before {
     // mask-image: url('#{$bootstrap-icon-path}info-circle-fill.svg');
     // mask-image: url('#{$bootstrap-icon-path}info.svg');
@@ -523,13 +520,13 @@ body {
   font-weight: 600;
   color: #fff;
   text-decoration: none;
-  transition: color .3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 
   span {
     position: relative;
     top: -1px;
     display: inline-block;
-    padding: 0 5px
+    padding: 0 5px;
   }
 
   &:hover {
@@ -537,8 +534,8 @@ body {
   }
 }
 
-.gfdashpanel .gfdashpanel__sidelinks li[data-i="inspect"] a {
-  &::before {;
+.gfdashpanel .gfdashpanel__sidelinks li[data-i='inspect'] a {
+  &::before {
     mask-image: url('#{$bootstrap-icon-path}wrench-adjustable-circle.svg');
   }
 }
@@ -559,7 +556,7 @@ body {
 
 [data-ss-element] {
   filter: unset;
-  transition: filter .5s ease-in-out;
+  transition: filter 0.5s ease-in-out;
 }
 
 .controlelements > a {
@@ -571,8 +568,8 @@ body {
   text-decoration: none;
 
   // background-color: #ff0000;
-  border-top: .5px solid #ddd;
-  border-bottom: .5px solid #ddd;
+  border-top: 0.5px solid #ddd;
+  border-bottom: 0.5px solid #ddd;
 
   &::before {
     position: absolute;
@@ -620,7 +617,6 @@ body {
 }
 
 .controleelementinfo {
-
   @include media-breakpoint-up(md) {
     right: calc(50vw - 250px - 8px - 15px);
     width: 500px;
@@ -728,15 +724,19 @@ body {
   border-radius: 4px;
 }
 
-.controleelementinfo .controleelementinfo__info .blockstate[data-type="modified"] {
+.controleelementinfo
+  .controleelementinfo__info
+  .blockstate[data-type='modified'] {
   background-color: #e95b1c;
 }
 
-.controleelementinfo .controleelementinfo__info .blockstate[data-type="draft"] {
+.controleelementinfo .controleelementinfo__info .blockstate[data-type='draft'] {
   background-color: #e95b1c;
 }
 
-.controleelementinfo .controleelementinfo__info .blockstate[data-type="published"] {
+.controleelementinfo
+  .controleelementinfo__info
+  .blockstate[data-type='published'] {
   background-color: #55bb82;
 }
 
@@ -768,31 +768,30 @@ body {
       mask-repeat: no-repeat;
       mask-position: center;
       mask-size: contain;
-      transition: background-color .3s ease-in-out;
+      transition: background-color 0.3s ease-in-out;
     }
 
-    i[data-type="page"] {
+    i[data-type='page'] {
       // mask-image: url('#{$bootstrap-icon-path}file-earmark-medical-fill.svg');
     }
 
-    i[data-type="clock"] {
+    i[data-type='clock'] {
       width: 14px;
       height: 14px;
-      opacity: .8;
+      opacity: 0.8;
       mask-image: url('#{$bootstrap-icon-path}clock.svg');
     }
 
-    i[data-type="clock-history"] {
+    i[data-type='clock-history'] {
       width: 14px;
       height: 14px;
-      opacity: .8;
+      opacity: 0.8;
       mask-image: url('#{$bootstrap-icon-path}clock-history.svg');
     }
   }
 }
 
 .controleelementinfo .controleelementinfo__info .blockstate {
-
   @include media-breakpoint-down(md) {
     margin-bottom: 5px;
   }
@@ -800,7 +799,6 @@ body {
 
 .controleelementinfo .controleelementinfo__info .blockcreated,
 .controleelementinfo .controleelementinfo__info .blockupdated {
-
   @include media-breakpoint-down(md) {
     width: 100%;
     padding-left: 0;
@@ -844,8 +842,10 @@ body {
   border-radius: 5px;
 }
 
-.controlwindow .controlwindow__inner {}
-.controlwindow .controlwindow__inner .controlwindow__head {}
+.controlwindow .controlwindow__inner {
+}
+.controlwindow .controlwindow__inner .controlwindow__head {
+}
 
 .controlwindow .controlwindow__inner .controlwindow__head .controlwindow__tabs {
   display: flex;
@@ -856,11 +856,20 @@ body {
   border-bottom: 1px solid #ddd;
 }
 
-.controlwindow .controlwindow__inner .controlwindow__head .controlwindow__tabs li {
+.controlwindow
+  .controlwindow__inner
+  .controlwindow__head
+  .controlwindow__tabs
+  li {
   border-right: 1px solid #ddd;
 }
 
-.controlwindow .controlwindow__inner .controlwindow__head .controlwindow__tabs li button {
+.controlwindow
+  .controlwindow__inner
+  .controlwindow__head
+  .controlwindow__tabs
+  li
+  button {
   display: block;
   padding: 5px 13px 7px;
   font-size: 12px;
@@ -870,7 +879,12 @@ body {
   border: none;
 }
 
-.controlwindow .controlwindow__inner .controlwindow__head .controlwindow__tabs li[data-active] button {
+.controlwindow
+  .controlwindow__inner
+  .controlwindow__head
+  .controlwindow__tabs
+  li[data-active]
+  button {
   background-color: #f7f7f7;
 }
 

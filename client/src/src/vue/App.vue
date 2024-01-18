@@ -1,23 +1,20 @@
 <script setup>
-
-import { ref } from 'vue'
+import { ref } from 'vue';
 import { useAppStore } from './stores/AppStore';
 const store = useAppStore();
 
-import Dashpanel from "./components/Dashpanel.vue";
-import ElementsTracker from "./components/ElementsTracker.vue";
+import Dashpanel from './components/Dashpanel.vue';
+import ElementsTracker from './components/ElementsTracker.vue';
 
 const props = defineProps({
-  supplies: String
-})
+  supplies: String,
+});
 
-store.setInitData(props.supplies)
+store.setInitData(props.supplies);
 
 const elementsOn = ref(true);
-
 </script>
 <template>
-
   <ElementsTracker v-if="elementsOn && store.elementTrack"></ElementsTracker>
 
   <div class="gfdashpanel">
@@ -34,5 +31,4 @@ const elementsOn = ref(true);
       @click="store.toggleElementTrack()"
     ></button>
   </div>
-
 </template>

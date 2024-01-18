@@ -2,7 +2,6 @@ import { defineStore } from 'pinia';
 import { useLocalStorage } from '@vueuse/core';
 
 export const useAppStore = defineStore('AppStore', {
-
   state: () => ({
     panel: useLocalStorage('Dashpanel:panel', false),
     elementTrack: useLocalStorage('Dashpanel:elementTrack', false),
@@ -10,19 +9,16 @@ export const useAppStore = defineStore('AppStore', {
   }),
 
   getters: {
-
     hidePanel(state) {
-      return state.panel = false;
+      return (state.panel = false);
     },
 
     showPanel(state) {
-      return state.panel = true;
+      return (state.panel = true);
     },
-
   },
 
   actions: {
-
     setInitData(data) {
       this.data = JSON.parse(data);
     },
@@ -34,7 +30,5 @@ export const useAppStore = defineStore('AppStore', {
     toggleElementTrack() {
       this.elementTrack = !this.elementTrack;
     },
-
   },
-
 });
