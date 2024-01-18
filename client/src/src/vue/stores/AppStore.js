@@ -1,17 +1,13 @@
 import { defineStore } from 'pinia';
-import { useLocalStorage } from "@vueuse/core";
+import { useLocalStorage } from '@vueuse/core';
 
 export const useAppStore = defineStore('AppStore', {
 
-  state: () => {
-
-    return {
-      panel: useLocalStorage('Dashpanel:panel', false),
-      elementTrack: useLocalStorage('Dashpanel:elementTrack', false),
-      data: {},
-    };
-
-  },
+  state: () => ({
+    panel: useLocalStorage('Dashpanel:panel', false),
+    elementTrack: useLocalStorage('Dashpanel:elementTrack', false),
+    data: {},
+  }),
 
   getters: {
 
@@ -28,19 +24,17 @@ export const useAppStore = defineStore('AppStore', {
   actions: {
 
     setInitData(data) {
-
-      this.data = JSON.parse(data)
-
+      this.data = JSON.parse(data);
     },
 
     togglePanel() {
-      this.panel = !this.panel
+      this.panel = !this.panel;
     },
 
     toggleElementTrack() {
-      this.elementTrack = !this.elementTrack
+      this.elementTrack = !this.elementTrack;
     },
 
-  }
+  },
 
 });

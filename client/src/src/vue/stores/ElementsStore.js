@@ -2,18 +2,13 @@ import { defineStore } from 'pinia';
 
 export const useElementsStore = defineStore('ElementsStore', {
 
-  state: () => {
-
-    return {
-      elements: [],
-    };
-
-  },
+  state: () => ({
+    elements: [],
+  }),
 
   actions: {
 
     addElement(element) {
-
       this.elements.push({
         ref: element,
         id: element.getAttribute('data-ss-element'),
@@ -34,6 +29,6 @@ export const useElementsStore = defineStore('ElementsStore', {
       });
     },
 
-  }
+  },
 
 });

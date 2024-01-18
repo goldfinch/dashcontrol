@@ -3,4 +3,4 @@ import.meta.glob([
   './fonts/**',
 ]);
 
-import ('./vue/vue')
+import('./vue/vue');
