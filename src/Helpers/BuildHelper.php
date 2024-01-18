@@ -2,9 +2,9 @@
 
 namespace Goldfinch\Dashpanel\Helpers;
 
+use SilverStripe\Core\Environment;
 use SilverStripe\Control\Director;
 use SilverStripe\View\Requirements;
-use SilverStripe\Core\Environment;
 
 class BuildHelper
 {

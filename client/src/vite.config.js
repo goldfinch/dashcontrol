@@ -2,7 +2,6 @@ import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import autoprefixer from "autoprefixer";
 import * as path from 'path'
-import { viteStaticCopy } from 'vite-plugin-static-copy'
 import vue from '@vitejs/plugin-vue';
 import fs from 'fs';
 import initCfg from './app.config.js'
@@ -53,11 +52,6 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 
             return 'js/[name][extname]'
           },
-          // manualChunks(id) {
-          //     if (id.includes('node_modules')) {
-          //         return id.toString().split('node_modules/')[1].split('/')[0].toString();
-          //     }
-          // }
         }
       }
     },
@@ -70,7 +64,6 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
                 'src/dashpanel.js',
             ],
             refresh: true,
-            // buildDirectory: '',
         }),
 
         vue({
@@ -81,15 +74,6 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
                 },
             },
         }),
-
-        // viteStaticCopy({
-        //   targets: [
-        //     {
-        //       src: './node_modules/bootstrap-icons/icons/*',
-        //       dest: '../dist/images/bootstrap-icons',
-        //     },
-        //   ],
-        // })
     ],
 
     css: {

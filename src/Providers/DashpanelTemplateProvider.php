@@ -2,8 +2,8 @@
 
 namespace Goldfinch\Dashpanel\Providers;
 
-use SilverStripe\View\TemplateGlobalProvider;
 use Goldfinch\Dashpanel\Views\Dashpanel;
+use SilverStripe\View\TemplateGlobalProvider;
 
 class DashpanelTemplateProvider implements TemplateGlobalProvider
 {
