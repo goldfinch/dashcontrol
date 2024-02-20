@@ -1,0 +1,23 @@
+<?php
+{{ namespace }}
+use Goldfinch\Dashboard\DashboardPanel;
+
+class {{ class }}Panel extends DashboardPanel
+{
+    protected $panel_header = '{{ panelname }}';
+
+    protected $panel_cols = 12;
+
+    protected $panel_position = 1;
+
+    // protected $panel_extra_class = '';
+
+    // protected $panel_actions = [];
+
+    // protected $panel_dev = false;
+
+    public function process(): array
+    {
+        return ['somedata' => 'example'];
+    }
+}
